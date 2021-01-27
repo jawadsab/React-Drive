@@ -1,0 +1,26 @@
+.card {
+  border-radius: 10px;
+  color: #1d3557;
+  box-shadow: 1px 12px 31px -7px rgba(29, 53, 87, 0.94);
+  -webkit-box-shadow: 1px 12px 31px -7px rgba(29, 53, 87, 0.94);
+  -moz-box-shadow: 1px 12px 31px -7px rgba(29, 53, 87, 0.94);
+}
+
+.form-label {
+  font-weight: bold;
+}
+.have-acct {
+  color: #1d3557;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+.submit-btn {
+  color: white;
+  background-color: #1d3557;
+  outline: none;
+  border: none;
+  font-weight: bold;
+}
+.submit-btn:hover {
+  background: #457b9d;
+}

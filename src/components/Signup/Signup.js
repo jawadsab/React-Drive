@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import "./signupStyles.css";
 import { Card, Form, Button } from "react-bootstrap";
 
 const Signup = () => {
@@ -30,12 +31,12 @@ const Signup = () => {
               <Form.Control ref={passwordConfirmRef} type="password" required />
             </Form.Group>
           </Form>
-          <Button className="w-100" type="submit">
+          <Button className="w-100 submit-btn" type="submit">
             Sign up
           </Button>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2 have-acct">
         Already have an account? Log in
       </div>
     </>
