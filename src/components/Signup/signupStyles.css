@@ -16,11 +16,11 @@
 }
 .submit-btn {
   color: white;
-  background-color: #1d3557;
+  background-color: #1d3557 !important;
   outline: none;
   border: none;
   font-weight: bold;
 }
 .submit-btn:hover {
-  background: #457b9d;
+  background: #457b9d !important;
 }

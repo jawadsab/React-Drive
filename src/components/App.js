@@ -1,9 +1,13 @@
 import React from "react";
-import "./index.css"
+import "./index.css";
 
 import { Container } from "react-bootstrap";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Signup from "./Signup/Signup";
+import { AuthProvider } from "./context/AuthContext";
+import Dashboard from "./Dashboard/Dashboard";
+import Login from "./Login/Login";
 
 export default function App() {
   return (
@@ -12,7 +16,15 @@ export default function App() {
       style={{ minHeight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <Signup />
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <Route exact path="/" component={Dashboard} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+            </Switch>
+          </AuthProvider>
+        </Router>
       </div>
     </Container>
   );
