@@ -8,6 +8,8 @@ import Signup from "./Signup/Signup";
 import { AuthProvider } from "./context/AuthContext";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login/Login";
+import ForgotPassword from "./ForgotPassword/ForgotPassword";
+import PrivateRoute from "./PrivateRoute";
 
 export default function App() {
   return (
@@ -19,9 +21,10 @@ export default function App() {
         <Router>
           <AuthProvider>
             <Switch>
-              <Route exact path="/" component={Dashboard} />
+              <PrivateRoute exact path="/" component={Dashboard} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>
         </Router>

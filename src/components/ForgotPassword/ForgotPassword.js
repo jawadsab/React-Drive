@@ -1,32 +1,27 @@
 import React, { useRef, useState } from "react";
 
-import { Link, useHistory, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../context/AuthContext";
 
-const Login = () => {
+const ForgotPassword = () => {
   const emailRef = useRef();
-  const passwordRef = useRef();
 
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [sucess, setSucess] = useState(false);
-  const history = useHistory();
 
   const { login } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
     const email = emailRef.current.value;
-    const password = passwordRef.current.value;
-
-    console.log({ email, password });
 
     try {
       setError("");
       setLoading(true);
-      await login(email, password);
+      // await login(email, password);
       setSucess(true);
       // history.push("/");
     } catch (error) {
@@ -51,20 +46,17 @@ const Login = () => {
                 required
               />
             </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control ref={passwordRef} type="password" required />
-            </Form.Group>
+
             <Button
               disabled={loading}
               className="w-100 submit-btn"
               type="submit"
             >
-              Login
+              Reset Password
             </Button>
           </Form>
           <div className="w-100 text-center mt-2 have-acct">
-            <Link to="/forgot-password">Forgot password?</Link>
+            <Link to="/login">Login</Link>
           </div>
         </Card.Body>
       </Card>
@@ -76,4 +68,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ForgotPassword;
